@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Dashboard</title>
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <h1>Panel de Usuario</h1>
+  <div id="userInfo"></div>
+  <button id="logout">Cerrar Sesión</button>
+
+  <!-- Formulario para crear un colaborador -->
+  <div class="collaborator-form">
+    <h2>Registrar Colaborador</h2>
+    <form id="collaboratorForm">
+      <label for="identificacion">Identificación:</label>
+      <input id="identificacion" required />
+
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" required />
+
+      <label for="cargo">Cargo:</label>
+      <input id="cargo" placeholder="Ej : Jardinero" required />
+
+      <label for="contacto">Contacto:</label>
+      <input id="contacto" required />
+
+      <button type="submit">Registrar</button>
+    </form>
+  </div>
+
+  <div class="collaborators-list">
+    <h2>Mis Colaboradores</h2>
+    <div id="collaboratorsList"></div>
+  </div>
+    <h2>Registrar Siembra</h2>
+    <form id="siembraForm" enctype="multipart/form-data">
+  <h3>Registrar Siembra</h3>
+  
+  <label>Fecha:</label>
+  <input type="date" name="fecha" required />
+  
+  <label>Ubicación:</label>
+  <input type="text" name="ubicacion" required />
+
+  <div id="insumosContainer">
+    <h4>Insumos</h4>
+    <div class="insumo">
+      <input  type="text" name="insumos[0][nombre]" placeholder="Nombre del insumo" required />
+      <input type="number" name="insumos[0][cantidad]" placeholder="Cantidad" required />
+    </div>
+  </div>
+  <button type="button" id="addInsumo">+ Añadir Insumo</button>
+  
+  <label>Fotos:</label>
+  <input type="file" name="fotos" multiple required />
+  
+  <button type="submit">Registrar Siembra</button>
+</form>
+
+    <h3>Mis Siembras</h3>
+    <div id="siembrasList"></div>
+  <script src="js/dashboard.js"></script>
+  <script src="js/siembra.js"></script>
+</body>
+</html>

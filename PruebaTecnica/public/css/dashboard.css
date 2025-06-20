@@ -1,0 +1,30 @@
+/* css Hecho con ChatGPT */
+body {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  background-color: #f9fafb;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+#userInfo {
+  font-size: 1rem;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #d9534f;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c9302c;
+}

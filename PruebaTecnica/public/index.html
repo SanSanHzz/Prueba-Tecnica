@@ -1,0 +1,32 @@
+<!-- index.html hecho con ayuda de ChatGPT -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login / Registro</title>
+  <link rel="stylesheet" href="css/index.css">
+<body>
+  <div class="box">
+    <h2>Registro</h2>
+    <form id="registerForm">
+      <input type="text" id="regIdentificacion" placeholder="Identificación" required />
+      <input type="text" id="regNombre" placeholder="Nombre" required />
+      <input type="text" id="regCargo" placeholder="Cargo" value="Agricultor" required disabled/>
+      <input type="text" id="regContacto" placeholder="Contacto" required />
+      <input type="password" id="regContrasena" placeholder="Contraseña" required />
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+
+  <div class="box">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="loginIdentificacion" placeholder="Identificación" required />
+      <input type="password" id="loginContrasena" placeholder="Contraseña" required />
+      <button type="submit">Iniciar sesión</button>
+    </form>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
