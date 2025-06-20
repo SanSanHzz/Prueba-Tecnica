@@ -31,3 +31,39 @@ exports.getMySiembras = async (req, res) => {
     res.status(500).json({ message: 'Error al obtener siembras', error });
   }
 };
+
+
+// Actualizar siembra
+exports.updateSiembra = async (req, res) => {
+  const { id } = req.params;
+  const { fecha, ubicacion, insumos } = req.body;
+
+  try {
+    const updated = await Siembra.findByIdAndUpdate(
+      id,
+      { fecha, ubicacion, insumos },
+      { new: true }
+    );
+    if (!updated) {
+      return res.status(404).json({ message: "Siembra no encontrada" });
+    }
+    res.json({ message: "Siembra actualizada correctamente", updated });
+  } catch (error) {
+    res.status(500).json({ message: "Error al actualizar siembra", error });
+  }
+};
+
+// Eliminar siembra
+exports.deleteSiembra = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const deleted = await Siembra.findByIdAndDelete(id);
+    if (!deleted) {
+      return res.status(404).json({ message: "Siembra no encontrada" });
+    }
+    res.json({ message: "Siembra eliminada correctamente" });
+  } catch (error) {
+    res.status(500).json({ message: "Error al eliminar siembra", error });
+  }
+};

@@ -9,10 +9,14 @@ const userRoutes = require('./routes/user.routes');
 const authRoutes = require('./routes/auth.routes');
 const collaboratorRoutes = require('./routes/collaborator.routes');
 const siembraRoutes = require('./routes/siembra.routes');
+const toolRoutes = require('./routes/tool.routes');
+
+
 const app = express(); // <- Crea la instancia principal de Express, que se usa para configurar middlewares, rutas, etc.
 app.use(express.json());
 app.use(cors());
 app.use(morgan('dev')); // <- para ver las peticiones en consola, pro ejemplo GET /api/users 200 15.234 ms - 324 , POST /api/auth/login 401 8.432 ms - 45
+app.use('/api/tools', toolRoutes);
 app.use('/api/collaborators', collaboratorRoutes);
 app.use('/api/siembras', siembraRoutes);
 app.use('/api/auth', authRoutes);

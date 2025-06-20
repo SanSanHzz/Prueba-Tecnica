@@ -4,11 +4,11 @@ const User = require('../models/user.model');
 const jwt = require('jsonwebtoken');
 const auth = require('../middlewares/auth');
 
-// 🔐 Clave secreta (luego guárdala en .env)
+
 const SECRET = process.env.JWT_SECRET || 'clavejwt';
 router.get('/me', auth, async (req, res) => {
   try {
-    const user = await User.findById(req.user.identificacion).select('-contrasena'); // 👈 omitimos el contrasena
+    const user = await User.findById(req.user.identificacion).select('-contrasena'); // Estoy omitiendo la contraseña
 
     if (!user) {
       return res.status(404).json({ message: 'Usuario no encontrado' });
@@ -20,7 +20,7 @@ router.get('/me', auth, async (req, res) => {
   }
 });
 
-// Registro
+
 router.post('/register', async (req, res) => {
   try {
     const { identificacion, nombre, cargo, contacto, contrasena } = req.body;
@@ -38,7 +38,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Login
+
 router.post('/login', async (req, res) => {
   try {
     const { identificacion, contrasena } = req.body;
