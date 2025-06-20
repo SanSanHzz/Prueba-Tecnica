@@ -1,15 +1,14 @@
 // Archivo hecho con ayuda de ChatGPT
-const mongoose = require('mongoose');
-
+const mongoose = require('mongoose');// <- Importo mongoose
 const siembraSchema = new mongoose.Schema({
   fecha: { type: Date, required: true },
-  insumos: [{ nombre: String, cantidad: Number }], // array de objetos
+  insumos: [{ nombre: String, cantidad: Number }], 
   ubicacion: { type: String, required: true },
-  fotos: [{ type: String }], // array de URLs o nombres de archivos
+  fotos: [{ type: String }], 
   owner: { 
     type: mongoose.Schema.Types.ObjectId, 
     ref: 'User',
   },
-}, { timestamps: true }); // para guardar fecha de creación y actualización
+}, { timestamps: true }); // <- hago el eschema 
 
-module.exports = mongoose.model('Siembra', siembraSchema);
+module.exports = mongoose.model('Siembra', siembraSchema); // <- Exporto el eschema
